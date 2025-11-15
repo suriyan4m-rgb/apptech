@@ -72,7 +72,7 @@ async function refreshUsers() {
 async function checkHealth() {
   const r = await apiFetch('/health', { method: 'GET' });
   setDebug('GET /health', r);
-  alert(r.ok ? Healthy: ${JSON.stringify(r.data)} : `Health check failed: ${r.status || r.error}`);
+  alert(r.ok ? `Healthy: ${JSON.stringify(r.data)}` : `Health check failed: ${r.status || r.error}`);
 }
 
 // --- Create user (POST) ---
@@ -158,4 +158,3 @@ document.getElementById('btn-health').addEventListener('click', checkHealth);
 
 // load initial
 refreshUsers();
-
